@@ -125,8 +125,9 @@ north2 = INSR(PROD)(AA(QUOTE)([[-110,2.5],[-2.5,50],[-25,13.5,-10,13.5,-10,13.5,
 north3 = INSR(PROD)(AA(QUOTE)([[-110,2.5],[-52.5,9],[-25,80]]))
 north4 = INSR(PROD)(AA(QUOTE)([[-110,2.5],[-52.5,-9,3],[-25,3,-25,3,-22,3,-21,3]]))
 north5 = INSR(PROD)(AA(QUOTE)([[-110,2.5],[-52.5,-12,2.5],[-25,80]]))
+north6 = INSR(PROD)(AA(QUOTE)([[-85,2.5],[-1.25,-22.15,9.3],[25]]))
 
-north = T([1,2])([-1.25,-1.25])(STRUCT([north1,north2,north3,north4,north5]))
+north = T([1,2])([-1.25,-1.25])(STRUCT([north1,north2,north3,north4,north5,north6]))
 
 #east wall
 
@@ -134,13 +135,21 @@ east1 = INSR(PROD)(AA(QUOTE)([[55],[2.5],[-25,59.5,-11,9.5]]))
 east2 = INSR(PROD)(AA(QUOTE)([[-55,2.5],[2.5],[-25,80]]))
 east3 = INSR(PROD)(AA(QUOTE)([[-57.5,25],[2.5],[-25,13.5,-10,13.5,-10,13.5,-10,9.5]]))
 east4 = INSR(PROD)(AA(QUOTE)([[-57.5,-25,30],[2.5],[-25,80]]))
+east5 = INSR(PROD)(AA(QUOTE)([[-14.5,-2.5,-7,61],[-23.4,2.5],[14]]))
+east6 = INSR(PROD)(AA(QUOTE)([[-14.5,-2.5,-7,31],[-23.4,2.5],[-14,10]]))
+east7 = INSR(PROD)(AA(QUOTE)([[-14.5,-2.5,-7,61],[-23.4,2.5],[-24,1]]))
+east8 = INSR(PROD)(AA(QUOTE)([[-14.5,-2.5,-7,-61,12.32],[-41.1,2.5],[25]]))
 
-east = T([1,2])([-1.25,-1.25])(STRUCT([east1,east3,east2,east4]))
 
-walls = STRUCT([west,south,north])
+east = T([1,2])([-1.25,-1.25])(STRUCT([east1,east3,east2,east4,east5,east6,east7,east8]))
 
-#Scheletro maison
+walls = STRUCT([west,south,north,east])
 
-building = STRUCT([pillars,floors, walls,east])
+#terreno
+terrain=T([1,2])([-33.75,-56.5,-0.5])(INSR(PROD)(AA(QUOTE)([[180],[180],[0.5]])))
+
+
+
+building = STRUCT([pillars,floors, walls,terrain])
 
 VIEW(building)
