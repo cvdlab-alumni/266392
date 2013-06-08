@@ -33,12 +33,22 @@ FV = [[5,6,7,8],
 [0,8,7],[3,6,7],[1,2,3],[0,1,4]]
 
 var lar_to_obj = function(v,fv){  
-	var p=" Vertici V: ";
-	p = p+"\n";
+	var p=" Vertici V:\n";
 
 	for(var i=0; i<V.length, i++)
 	{
-		p=p+"v1: x="+V[i][0]+" y="+V[i][1]+"\n";
+		p=p+"v"+i+": x="+V[i][0]+" y="+V[i][1]+"\n";
+	}
+
+	p=p+"\n";
+	p=p+"Facce 2D:\n";
+	for(var i=0; i<FV.length, i++)
+	{
+		for(var i=0; i<FV.length, i++)
+		{
+			
+		}
+
 	}
 
 	return p;
