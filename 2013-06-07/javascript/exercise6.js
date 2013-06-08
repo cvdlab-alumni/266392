@@ -44,7 +44,7 @@ var lar_to_obj = function(v,fv){
 	p=p+"Facce 2D:\n";
 	for(var i=0; i<FV.length, i++)
 	{
-		for(var i=0; i<FV.length, i++)
+		for(var j=0; j<FV[i].length, j++)
 		{
 			
 		}
