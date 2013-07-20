@@ -7,8 +7,8 @@
 ************************************************************************************/
 
 /* dichiarazione dei domini */
-var domain = INTERVALS(1)(8);
-var domain2d = PROD1x1([INTERVALS(1)(8),INTERVALS(1)(8)]);
+var domain = INTERVALS(1)(16);
+var domain2d = PROD1x1([INTERVALS(1)(16),INTERVALS(1)(16)]);
 var domain2dcorn = PROD1x1([INTERVALS(1)(32),INTERVALS(1)(32)]);
 
 
@@ -24,7 +24,7 @@ var white = [50,50,50];
 /* Arco di circonferenza bidimensionale parametrico rispetto a due raggi 
 	r = raggio minore, R = raggio maggiore, alpha = arco di circonferenza */
 function arc (alpha, r, R){
-	var domainArc = DOMAIN([[0,alpha],[r,R]])([8,1]);
+	var domainArc = DOMAIN([[0,alpha],[r,R]])([16,1]);
 	var mapping = function(v) {
 	var a = v[0];
 	var r = v[1];
@@ -37,7 +37,7 @@ function arc (alpha, r, R){
 }
 
 var sphere = function(r) {
-	var domain = DOMAIN([[0, PI], [0, 2*PI]])([8,18]);
+	var domain = DOMAIN([[0, PI], [0, 2*PI]])([16,16]);
 
 	var mapping = function(v) {
 		var a = v[0];
@@ -887,6 +887,15 @@ var sottoCornetta = function() {
 	return sottoCor;
 }
 
-var result = STRUCT([base(),body(),sottoCornetta(),cornetta()]);
+var model = function(i) {
 
-DRAW(result);
+	var result = STRUCT([base(),body(),sottoCornetta(),cornetta()]);
+
+	if(i==0) {
+		result = STRUCT([base(),body(),sottoCornetta()]);
+	}
+	
+	return result;
+}
+
+//DRAW(result);

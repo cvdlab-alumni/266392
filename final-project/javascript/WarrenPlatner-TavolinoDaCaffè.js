@@ -16,7 +16,7 @@ var vitro = [30/255,144/255,255/255,0.4];
 /* Arco di circonferenza bidimensionale parametrico rispetto a due raggi 
 	r = raggio minore, R = raggio maggiore, alpha = arco di circonferenza */
 function arc (alpha, r, R){
-	var domain = DOMAIN([[0,alpha],[r,R]])([64,1]);
+	var domain = DOMAIN([[0,alpha],[r,R]])([32,1]);
 
 	var mapping = function(v) {
 	var a = v[0];
